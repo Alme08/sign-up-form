@@ -1,0 +1,59 @@
+@font-face{
+    font-family: aloen;
+    src: url(Aloen.ttf);
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+}
+
+section{
+    width: 40%;
+    background-image: url(https://images.unsplash.com/photo-1578393098337-5594cce112da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=617&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+section p{
+    margin-top: 5rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: aloen;
+    font-size: 10rem;
+    color: #fff;
+    text-align: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.form{
+    border: solid 2px #000;
+}
+.container div, h2, p{
+    padding: 0 5rem;
+}
+[type="submit"]{
+    margin-left: 5rem;
+}
