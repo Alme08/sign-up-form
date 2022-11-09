@@ -2,10 +2,12 @@
     font-family: aloen;
     src: url(Aloen.ttf);
 }
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;600&display=swap');
 
 html {
     box-sizing: border-box;
     font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
 }
   
 *, *:before, *:after {
@@ -29,7 +31,7 @@ body{
 }
 
 section{
-    width: 40%;
+    width: 50%;
     background-image: url(https://images.unsplash.com/photo-1578393098337-5594cce112da?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=617&q=80);
     background-position: center;
     background-repeat: no-repeat;
@@ -44,16 +46,85 @@ section p{
     text-align: center;
 }
 .container{
+    width: 100%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    gap: 2.5rem;
+    background-color: #fdfdfd;
 }
 
 .form{
-    border: solid 2px #000;
+    background-color: #fff;
+    padding: 2rem 0;
+    box-shadow: 5px 10px 20px -5px rgba(0, 0, 0, 0.356);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
 }
-.container div, h2, p{
-    padding: 0 5rem;
+.form h2{
+    font-weight: 800;
+}
+.container > div, p, .form{
+    padding-left: 2rem;
+}
+.container > div{
+    font-size: 1.5rem;
+    font-weight: 600;
+    width: 60vw;
 }
 [type="submit"]{
-    margin-left: 5rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #1D1D1D;
+    color: #fff;
+    margin-left: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 800;
+    transition: all 0.2s ease-in-out;
+}
+[type="submit"]:hover{
+    padding: 1rem 3.5rem;
+}
+[type="submit"]:focus{
+    background-color: #454545;
+}
+.field{
+    display: flex;
+    gap: 3rem;
+}
+label{
+    display: block;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+}
+.field input{
+    height: 2rem;
+    width: 15rem;
+    border-color: #45454546;
+    border-radius: 5px;
+}
+.field input:invalid{
+    border-color: red;
+}
+.field input:valid{
+    border-color: green;
+}
+.field input:focus{
+    border-color: rgb(124, 255, 101);
+    box-shadow: 5px 10px 10px -5px rgba(0, 0, 0, 0.356);
+}
+main > p{
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+main > p > a{
+    text-decoration: none;
+    color: #1D1D1D;
+    font-weight: 800;
 }

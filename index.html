@@ -14,39 +14,65 @@
         </div>
     </section>
     <div class="container">
-        <div>
+        <div class="text">
             This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.<br>
             Sign up <i>now</i> to get started.<br><br>
             You <i>know</i> you want to.
         </div>
         <main>
-            <h2>Let's do this!</h2>
-            <form action="#">
+            <form action="#" onsubmit="validate(event)">
                 <div class="form">
-                    <label for="name">first name</label>
-                    <input type="text" id="name" name="name">
-        
-                    <label for="lastName">last name</label>
-                    <input type="text" id="lastName" name="lastName">
-        
-                    <label for="email">email</label>
-                    <input type="email" id="email" name="email">
-        
-                    <label for="phone">phone number</label>
-                    <input type="tel" name="phone" id="phone">
-        
-                    <label for="password">password</label>
-                    <input type="password" name="password" id="password">
-        
-                    <label for="confirmPassword">confirm password</label>
-                    <input type="password" name="confirmPassword" id="confirmPassword">
+                    <h2>Let's do this!</h2>
+                    <div class="field">
+                        <div>
+                            <label for="name">first name</label>
+                            <input type="text" id="name" name="name" pattern="^[a-z\d\.]{5,}$" required>
+                        </div>
+                        <div>
+                            <label for="lastName">last name</label>
+                            <input type="text" id="lastName" name="lastName" pattern="^[a-z\d\.]{5,}$" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div>
+                            <label for="email">email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div>
+                            <label for="phone">phone number</label>
+                            <input type="tel" name="phone" id="phone" pattern="[\+]\d{2}[\(]\d{2}[\)]\d{4}[\-]\d{4}" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div>
+                            <label for="password">password</label>
+                            <input type="password" name="password" id="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" required> 
+                        </div>
+                        <div>
+                            <label for="confirmPassword">confirm password</label>
+                            <input type="password" name="confirmPassword" id="confirmPassword" required>
+                        </div>
+                    </div>
                 </div>
-                <input type="submit" value="Create Account">
+                <input type="submit" value="Create Account" >
             </form>
             <p>
                 Already have an account? <a href="#">Log in</a>
             </p>
         </main>
     </div>
+
+    <script>
+        let pass = document.getElementById('password')
+        let pass2 = document.getElementById('confirmPassword')
+        const validate = e=>{
+            if(pass.value !== pass2.value){
+                e.preventDefault();
+                return false
+            }else{
+                return true
+            }
+        }
+    </script>
 </body>
 </html>
